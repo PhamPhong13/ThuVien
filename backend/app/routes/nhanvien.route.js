@@ -1,16 +1,16 @@
-const express = require('express');
-const nhavien = require('../controllers/nhavien.controller');
+const express = require("express");
+const nhanviens = require("../controllers/nhanvien.controller");
 
 const router = express.Router();
 
 router.route("/")
-    .get(nhavien.getAll)
-    .post(nhavien.create)
-    .delete(nhavien.deleteAll);
+    .get(nhanviens.findAll)
+    .post(nhanviens.create)
+    .delete(nhanviens.deleteAll);
 
 router.route("/:id")
-    .get(nhavien.findOne)
-    .put(nhavien.update)
-    .delete(nhavien.delete);
-    
+    .get(nhanviens.findOne)
+    .patch(nhanviens.update)
+    .delete(nhanviens.delete);
+
 module.exports = router;

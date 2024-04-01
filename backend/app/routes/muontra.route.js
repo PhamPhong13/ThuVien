@@ -1,16 +1,16 @@
-const express = require('express');
-const muontra = require('../controllers/muontra.controller');
+const express = require("express");
+const muontras = require("../controllers/muontra.controller");
 
 const router = express.Router();
 
 router.route("/")
-    .get(muontra.getAll)
-    .post(muontra.create)
-    .delete(muontra.deleteAll);
+    .get(muontras.findAll)
+    .post(muontras.create)
+    .delete(muontras.deleteAll);
 
 router.route("/:id")
-    .get(muontra.findOne)
-    .put(muontra.update)
-    .delete(muontra.delete);
-    
+    .get(muontras.findOne)
+    .patch(muontras.update)
+    .delete(muontras.delete);
+
 module.exports = router;

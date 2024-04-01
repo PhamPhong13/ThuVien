@@ -1,16 +1,16 @@
-const express = require('express');
-const nhaxuatban = require('../controllers/nhaxuatban.controller');
+const express = require("express");
+const nhaxuatbans = require("../controllers/nhaxuaban.controller");
 
 const router = express.Router();
 
 router.route("/")
-    .get(nhaxuatban.getAll)
-    .post(nhaxuatban.create)
-    .delete(nhaxuatban.deleteAll);
+    .get(nhaxuatbans.findAll)
+    .post(nhaxuatbans.create)
+    .delete(nhaxuatbans.deleteAll);
 
 router.route("/:id")
-    .get(nhaxuatban.findOne)
-    .put(nhaxuatban.update)
-    .delete(nhaxuatban.delete);
-    
+    .get(nhaxuatbans.findOne)
+    .patch(nhaxuatbans.update)
+    .delete(nhaxuatbans.delete);
+
 module.exports = router;

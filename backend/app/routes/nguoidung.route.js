@@ -1,16 +1,16 @@
-const express = require('express');
-const nguoidung = require('../controllers/nguoidung.controller');
+const express = require("express");
+const nguoidungs = require("../controllers/nguoidung.controller");
 
 const router = express.Router();
 
 router.route("/")
-    .get(nguoidung.getAll)
-    .post(nguoidung.create)
-    .delete(nguoidung.deleteAll);
+    .get(nguoidungs.findAll)
+    .post(nguoidungs.create)
+    .delete(nguoidungs.deleteAll);
 
 router.route("/:id")
-    .get(nguoidung.findOne)
-    .put(nguoidung.update)
-    .delete(nguoidung.delete);
-    
+    .get(nguoidungs.findOne)
+    .patch(nguoidungs.update)
+    .delete(nguoidungs.delete);
+
 module.exports = router;

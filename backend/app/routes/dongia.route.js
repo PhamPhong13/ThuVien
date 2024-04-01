@@ -1,16 +1,16 @@
-const express = require('express');
-const dongia = require('../controllers/dongia.controller');
+const express = require("express");
+const dongias = require("../controllers/dongia.controller");
 
 const router = express.Router();
 
 router.route("/")
-    .get(dongia.getAll)
-    .post(dongia.create)
-    .delete(dongia.deleteAll);
+    .get(dongias.findAll)
+    .post(dongias.create)
+    .delete(dongias.deleteAll);
 
 router.route("/:id")
-    .get(dongia.findOne)
-    .put(dongia.update)
-    .delete(dongia.delete);
-    
+    .get(dongias.findOne)
+    .patch(dongias.update)
+    .delete(dongias.delete);
+
 module.exports = router;
