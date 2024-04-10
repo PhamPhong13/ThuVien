@@ -13,4 +13,10 @@ router.route("/:id")
     .patch(sachs.update)
     .delete(sachs.delete);
 
+router.route('/findByNXB/:id')
+    .get(sachs.findByNXB);
+
+router.route('/findByTen/:name')
+    .get(sachs.findByName);
+
 module.exports = router;

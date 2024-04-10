@@ -6,12 +6,11 @@ const app = express();
 
 // router
 const Routerdocgia = require('./app/routes/docgia.route');
-const Routernguoidung = require('./app/routes/nguoidung.route');
-const Routermuontra = require('./app/routes/muontra.route');
+const Routermuontra = require('./app/routes/muontra.route');/*
 const Routernhanvien = require('./app/routes/nhanvien.route');
 const Routernhaxuatban = require('./app/routes/nhaxuatban.route');
-const Routersach = require('./app/routes/sach.route');
-const RouterAdmin = require('./app/routes/admin.route');
+const Routersach = require('./app/routes/sach.route');*/
+const RouterAdmin = require('./app/routes/admin.route'); 
 
 // class error
 const ApiError = require("./app/api-error");
@@ -20,12 +19,11 @@ app.use(cors());
 app.use(express.json());
 
 app.use( "/api/docgia", Routerdocgia );
-app.use( "/api/nguoidung", Routernguoidung );
-app.use( "/api/muontra", Routermuontra );
+ app.use( "/api/muontra", Routermuontra );/*
 app.use( "/api/nhanvien", Routernhanvien );
 app.use( "/api/nhaxuatban", Routernhaxuatban );
-app.use( "/api/sach", Routersach );
-app.use( "/api/admin", RouterAdmin );
+app.use( "/api/sach", Routersach );*/
+app.use( "/api/admin", RouterAdmin ); 
 
 // handle 404 response
 app.use((req, res, next) => {
